@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Desktop */
+body{
+    background: url('./assets/bannerMain.png'),url('./assets/blur-1.png'),url('./assets/blur-2.png');
+    background-repeat: no-repeat;
+    background-position: bottom center, left bottom,right top;
+    background-size:60%,50%,50%;
+    background-color: var(--backgrond);
+}
+
+html,body{
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 900px;
+}
+
+header{
+    width: 100%;
+    padding-top: 50px;
+    gap: 50px;
+}
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    list-style-type: none;
+}
+#menu li{
+    margin-left: 0.8;
+}
+#menu li a{
+    color:var(--text-color);
+    font-weight:400;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+#menu li a:hover{
+    color: var(--button);
+}
+.button{
+    display: block;
+    padding:0  40px;
+}
+header button.btn-desktop{
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid var(--button);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 11px 30px;
+    transition: 0.3s;
+}
+header button.btn-desktop:hover{
+    background-color: var(--button);
+}
+/* section */
+section{
+    width: 100%;
+}
+.titulo{
+    color: var(--text-color);
+    font-size: 3.0rem;
+    margin-top: 25px;
+    text-align: center;
+}
+.titulo h1:nth-child(2){
+
+    color: #000;
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+.logo-mobile{
+    display: none;
+}
+
+.btn-mobile{
+    display: none;
+}
+
+
+.titulo-mobile{
+        display: none;
+}
+.get-coffe{
+    display: none;
+}
+
+@media (max-width:50rem){
+    body{
+       background-image: url('./assets/blur-mobile.png'),url('./assets/bannerMain.png');
+       background-position: bottom center, bottom center;
+       background-size: 100% 60%,90% ;
+  
+        
+    }
+
+    header{
+        padding: 10px 20px 0 20px;
+        border-bottom: 1px solid var(--border-menu-mobile);
+    }
+    .btn-desktop{
+        display:none;
+    }
+    .menu-desktop{
+        visibility: hidden;
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 7rem);
+        background-color: #000; 
+        z-index: 999;
+    }
+    .openMenu{
+       
+        visibility: visible;
+    }
+    .openMenu #menu {
+       display: block;
+    }
+    
+    .openMenu li{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        border-bottom:1px solid #212124;
+        padding-left: 3rem;
+        
+    }
+    .openMenu li:hover{
+        border-left: 3px solid var(--button) ;
+    }
+    
+    .btn-mobile.btnclose{
+        background-image: url('./assets/menu-buguer-close.svg');
+        height: 18px;
+        width:18px;
+        transition: 0.4s;
+    }
+    
+    .logo-desktop{
+        display: none;
+    }
+    .logo-mobile{
+        display: block;
+        padding: 1rem;
+    }
+    .titulo{
+        
+      
+        color: var(--text-color);
+        font-size:1.8rem;
+        margin-top: 25px;
+        text-align: center; 
+    }
+    .btn-mobile{
+        background-image: url('./assets/menu-buguer-open.svg');
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        display: block;
+        height: 8px;
+        width:24px;
+    }
+   
+    .titulo-mobile{
+        display: block;
+        color: var(--text-color);
+        margin-top: 15px;
+        padding: 10px 25px;
+        text-align: center;
+    }
+    .titulo-mobile p {
+        font-size: 2.2rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    .get-coffe{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #getCoffe{
+        background: transparent;
+        border-radius: 10px;
+        border: 1px solid var(--button);
+        color: var(--text-color);
+        font-weight: bold;
+        padding: 11px 35px;
+        transition: 0.3s;
+        margin-top: 20px;
+        
+    }
+    .get-coffe button[type="button"]:hover{
+        background-color: var(--button);
+    }
+}
+
+
+
